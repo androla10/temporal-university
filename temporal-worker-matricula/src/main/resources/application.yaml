@@ -1,0 +1,17 @@
+
+quarkus:
+  rest-client:
+    teacher_yaml:
+      url: http://localhost:8082
+    course_yaml:
+      url: http://localhost:8081
+  http:
+    port: 8001
+    root-path: /api
+  openapi-generator:
+    codegen:
+      spec:
+        teacher_yaml:
+          base-package: pe.com.devinspirare.teacher
+        course_yaml:
+          base-package: pe.com.devinspirare.course

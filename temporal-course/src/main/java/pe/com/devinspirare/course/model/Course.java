@@ -1,16 +1,21 @@
 package pe.com.devinspirare.course.model;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Entity
+@Table(name = "course")
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@Builder
-public class Course {
-    private Long code;
+public class Course extends PanacheEntityBase {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
-    private Long[] schedules;
 }

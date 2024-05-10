@@ -1,4 +1,4 @@
-package pe.com.devinspirare.matricula.model;
+package pe.com.devinspirare.matricula.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Getter
-public class ProfesorDTO {
-    private Long codigo;
-    private String nombre;
+public class CursoDto {
+    private Long id;
+    private String name;
 }

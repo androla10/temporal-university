@@ -1,15 +1,15 @@
 package pe.com.devinspirare.course.services;
 
-import pe.com.devinspirare.course.model.Course;
+import pe.com.devinspirare.course.dtos.CourseDto;
 
-import java.util.Set;
+import java.util.List;
 
 public interface CourseService {
-    void add(Course course);
+    void add(CourseDto course);
 
     void delete(long id);
 
-    Set<Course> getAll();
+    List<CourseDto> getAll();
 
-    Course get(long id);
+    CourseDto get(long id);
 }

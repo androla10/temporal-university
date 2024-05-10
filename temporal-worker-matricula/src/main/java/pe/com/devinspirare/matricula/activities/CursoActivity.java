@@ -2,11 +2,11 @@ package pe.com.devinspirare.matricula.activities;
 
 import io.temporal.activity.ActivityInterface;
 import io.temporal.activity.ActivityMethod;
-import pe.com.devinspirare.matricula.model.CursoDTO;
+import pe.com.devinspirare.course.model.CourseDto;
 
-@ActivityInterface
+@ActivityInterface(namePrefix = "CursoActivities_")
 public interface CursoActivity {
 
     @ActivityMethod
-    CursoDTO obtenerPorCodigo(Long codigo);
+    CourseDto obtenerPorCodigo(Long codigo);
 }

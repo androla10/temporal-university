@@ -1,15 +1,22 @@
 package pe.com.devinspirare.teacher.mapper;
 
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+import jakarta.enterprise.context.ApplicationScoped;
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import pe.com.devinspirare.teacher.dtos.TeacherDto;
 import pe.com.devinspirare.teacher.model.Teacher;
 
-@Mapper(componentModel = "cdi")
-public interface TeacherMapper {
-    @Mapping(target = "name", source = "name")
-    TeacherDto teacherToDto(Teacher teacher);
-    @Mapping(target = "name", source = "name")
-    Teacher teacherDtoToEntity(TeacherDto teacher);
+@ApplicationScoped
+@RequiredArgsConstructor
+public class TeacherMapper {
 
+    private final ModelMapper modelMapper;
+
+    public TeacherDto teacherToDto(Teacher teacher) {
+        return this.modelMapper.map(teacher, TeacherDto.class);
+    }
+
+    public Teacher teacherDtoToEntity(TeacherDto teacher) {
+        return this.modelMapper.map(teacher, Teacher.class);
+    }
 }

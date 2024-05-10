@@ -1,0 +1,78 @@
+openapi: 3.0.3
+info:
+  title: temporal-course API
+  version: 1.0-SNAPSHOT
+paths:
+  /api/course:
+    get:
+      tags:
+        - Course Controller
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CourseDto'
+    post:
+      tags:
+        - Course Controller
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CourseDto'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CourseDto'
+  /api/course/{id}:
+    get:
+      tags:
+        - Course Controller
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CourseDto'
+    delete:
+      tags:
+        - Course Controller
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CourseDto'
+components:
+  schemas:
+    CourseDto:
+      type: object
+      properties:
+        id:
+          format: int64
+          type: integer
+        name:
+          type: string

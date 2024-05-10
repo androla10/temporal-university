@@ -21,6 +21,8 @@
         <module>temporal-teacher</module>
         <module>temporal-course</module>
         <module>temporal-worker-matricula</module>
+        <module>temporal-client-api-rest-matricula</module>
+        <module>temporal-commons</module>
     </modules>
 
     <version>1.0-SNAPSHOT</version>

@@ -1,0 +1,63 @@
+openapi: 3.0.3
+info:
+  title: temporal-teacher API
+  version: 1.0-SNAPSHOT
+paths:
+  /api/teachers:
+    get:
+      tags:
+        - Teacher Controller
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TeacherDto'
+    post:
+      tags:
+        - Teacher Controller
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeacherDto'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeacherDto'
+  /api/teachers/{id}:
+    get:
+      tags:
+        - Teacher Controller
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            format: int64
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeacherDto'
+components:
+  schemas:
+    TeacherDto:
+      type: object
+      properties:
+        id:
+          format: int64
+          type: integer
+        name:
+          type: string
+        lastName:
+          type: string

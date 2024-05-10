@@ -6,14 +6,11 @@ import jakarta.transaction.Transactional;
 import pe.com.devinspirare.teacher.dtos.TeacherDto;
 import pe.com.devinspirare.teacher.mapper.TeacherMapper;
 import pe.com.devinspirare.teacher.model.Teacher;
-import pe.com.devinspirare.teacher.repository.TeacherRepository;
 import pe.com.devinspirare.teacher.repository.impl.TeacherRepositoryImpl;
 import pe.com.devinspirare.teacher.services.TeacherService;
 
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @ApplicationScoped
 public class TeacherServiceImpl implements TeacherService {
